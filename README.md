@@ -1,4 +1,4 @@
-# Alphabets-Art
+# Alphabet-Art
 
 <a href="https://quarryhillpto.com/sciencefair/">Quarry Hill STEM FAIR</a> Demo
 
