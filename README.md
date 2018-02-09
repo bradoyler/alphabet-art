@@ -4,7 +4,7 @@
 
 [<< Try it >>](https://bradoyler.github.io/alphabet-art/)
 
-![screen](https://user-images.githubusercontent.com/425966/35991991-f6d82d9a-0cd6-11e8-9307-377d9dc5d3e9.jpg)
+![screen](https://user-images.githubusercontent.com/425966/36030518-907f3a26-0d75-11e8-9b09-efcbe79c2304.jpg)
 
 ## Setup for Development
 

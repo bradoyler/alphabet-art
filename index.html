@@ -16,8 +16,6 @@
     </script>
   </head>
   <body>
-    <video id="video" autoplay></video>
-    <canvas style="position:absolute; top:0;left:0; z-index:-99"></canvas>
     <a style="background-color:#eee; font-size: .9em; float:right;" href="https://github.com/bradoyler/alphabet-art" target="_blank">
         <span>view source</span>
         <svg id="i-github" viewBox="0 0 64 64" width="18" height="18">
@@ -25,7 +23,8 @@
         </svg>
     </a>
     <div id="app"></div>
+    <video style="z-index:-9" id="video" autoplay></video>
+    <canvas style="position:absolute; top:0;left:0; z-index:-99"></canvas>
     <script src="dist/build.js"></script>
-
   </body>
 </html>

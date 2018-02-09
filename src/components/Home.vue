@@ -1,13 +1,12 @@
 <template lang="html">
   <div>
+    <button class="cam-btn btn btn-secondary" v-on:click="initWebcam">
+      <svg class="octicon octicon-device-camera-video" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15.2 2.09L10 5.72V3c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h8c.55 0 1-.45 1-1V9.28l5.2 3.63c.33.23.8 0 .8-.41v-10c0-.41-.47-.64-.8-.41z"/></svg>
+    </button>
     <div class="container">
-      <button class="cam-btn" v-on:click="initWebcam">
-        <svg class="octicon octicon-device-camera-video" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15.2 2.09L10 5.72V3c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h8c.55 0 1-.45 1-1V9.28l5.2 3.63c.33.23.8 0 .8-.41v-10c0-.41-.47-.64-.8-.41z"/></svg>
-      </button>
       <div class="panel">
         <div class="title">{{title}} </div>
         <h5>
-
          <a href="https://quarryhillpto.com/sciencefair/">Quarry Hill STEM FAIR</a> Demo: Drawing images with the Alphabet
        </h5>
       </div>
@@ -47,6 +46,7 @@ export default {
   },
   methods: {
     initWebcam () {
+      console.log('initWebcam()')
       clearInterval(window.timerObj)
       const video = document.querySelector('#video')
       const canvas = document.querySelector('canvas')
@@ -131,8 +131,8 @@ export default {
   font-size:.25em;
 }
 .cam-btn {
-  padding-top: 4px;
-  font-size: .8em;
+  padding: 6px 10px 1px 10px;
+  font-size: .5em;
   float: left;
 }
 .title {
