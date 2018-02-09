@@ -11216,14 +11216,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_mixins_config__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_mixins_config__ = __webpack_require__(31);
 
 
 
 
 
 var configs = {
-  siteKey: '' // TODO: use config file
+  gaCode: ''
 };
 
 __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODULE_3__lib_mixins_config__["a" /* default */], configs);
@@ -11235,7 +11235,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
   template: '<App/>',
   components: { App: __WEBPACK_IMPORTED_MODULE_1__App_vue__["a" /* default */] },
   mounted: function mounted() {
-    console.log('Mounted!');
+    console.log('Vue Mounted!');
   }
 });
 
@@ -11687,7 +11687,7 @@ process.umask = function() { return 0; };
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1320667b_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6108547a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(14);
 function injectStyle (ssrContext) {
   __webpack_require__(10)
 }
@@ -11706,7 +11706,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1320667b_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6108547a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -11727,7 +11727,7 @@ var content = __webpack_require__(11);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("a38bfcf2", content, true);
+var update = __webpack_require__(3)("03fe3b48", content, true);
 
 /***/ }),
 /* 11 */
@@ -11792,11 +11792,8 @@ module.exports = function listToStyles (parentId, list) {
   name: 'app',
   data: function data() {
     return {
-      test: 'ASCII Art'
+      test: 'Alphabet Art'
     };
-  },
-  mounted: function mounted() {
-    // console.log('>>>> App mounted:', this)
   }
 });
 
@@ -14472,7 +14469,7 @@ if (inBrowser && window.Vue) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6a7e5b08_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_21a79714_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(23);
 function injectStyle (ssrContext) {
   __webpack_require__(18)
 }
@@ -14491,7 +14488,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6a7e5b08_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_21a79714_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -14512,7 +14509,7 @@ var content = __webpack_require__(19);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("7c099cea", content, true);
+var update = __webpack_require__(3)("8b5b521a", content, true);
 
 /***/ }),
 /* 19 */
@@ -14523,7 +14520,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, ".controls{font-size:.25em}#video{position:absolute;top:3px;left:3px;max-width:100px}.panel-body{font-family:Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;font-size:12px;text-align:left;color:#2bf22b;background-color:#000}", ""]);
+exports.push([module.i, ".controls{font-size:.25em}.cam-btn{padding-top:4px;font-size:.8em;float:left}.title{font-size:1.5em}.panel{margin:auto;max-width:440px;background:#eee}#video{position:absolute;top:3px;left:3px;max-width:100px}.panel-body{font-family:Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;font-size:12px;text-align:left;color:#2bf22b;background-color:#000}", ""]);
 
 // exports
 
@@ -14533,6 +14530,8 @@ exports.push([module.i, ".controls{font-size:.25em}#video{position:absolute;top:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_imagesloaded__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_imagesloaded___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_imagesloaded__);
 //
 //
 //
@@ -14550,6 +14549,16 @@ exports.push([module.i, ".controls{font-size:.25em}#video{position:absolute;top:
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 // for converting stream to video.src
 window.URL = window.URL || window.webkitURL;
@@ -14557,14 +14566,13 @@ window.URL = window.URL || window.webkitURL;
 // get webcam
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
-var ROW_PIXELS = 10;
-var COL_PIXELS = 8;
-var WEBCAM_DETECTED = false;
-
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
       captureSpeed: 2000,
+      rowPixels: 10,
+      colPixels: 8,
+      imgIds: ['img0', 'img1', 'img2', 'img3', 'img4', 'img5', 'img6'],
       webcamDetected: false,
       paused: false,
       title: 'Alphabet Art'
@@ -14572,20 +14580,20 @@ var WEBCAM_DETECTED = false;
   },
 
   methods: {
-    initDrawing: function initDrawing() {
+    initWebcam: function initWebcam() {
       var _this = this;
 
+      clearInterval(window.timerObj);
       var video = document.querySelector('#video');
       var canvas = document.querySelector('canvas');
-      var textCanvas = document.createElement('canvas');
+      var canvas2 = document.createElement('canvas');
       navigator.getUserMedia({ video: true }, function (stream) {
         video.src = window.URL.createObjectURL(stream);
-        if (!WEBCAM_DETECTED) {
-          console.log('initWebcam >>>>');
-          WEBCAM_DETECTED = true;
+        if (!_this.webcamDetected) {
+          _this.webcamDetected = true;
           setTimeout(function () {
-            _this.drawLoop(video, canvas, textCanvas);
-          }, 2000);
+            return _this.drawToCanvas({ image: video, canvas: canvas, canvas2: canvas2, loop: true });
+          }, 1000);
         }
       }, function (e) {
         return console.log('Failed to capture video ' + e);
@@ -14596,18 +14604,18 @@ var WEBCAM_DETECTED = false;
       // const DARK_TO_LIGHT = "@$BW#MQ8ERN95D06&HgGOS3%UPKFIp2ZbAdq4wCha[]1{}JXekVliofunjLTz7Yst=?)(|+xcmvr^/_*!y;,-':`.".split('')
 
       // Alpha chars, "Letters"
-      var DARK_TO_LIGHT = 'BWMQERNDHgGOSUPJXekVliofunjLTzYstxcmvry'.split('');
-      var NORMALISER = DARK_TO_LIGHT.length / 256;
-      var index = Math.floor(luminance * NORMALISER);
-      return DARK_TO_LIGHT[index];
+      var darkToLight = 'BWMQERNDHgGOSUPJXekVliofunjLTzYstxcmvry'.split('');
+      var normalizer = darkToLight.length / 256;
+      var index = Math.floor(luminance * normalizer);
+      return darkToLight[index];
     },
     drawToContext: function drawToContext(context, sourceImageData) {
       var sourcePixels = sourceImageData.data;
       var numCols = sourceImageData.width;
       var numRows = sourceImageData.height;
-      for (var row = 0; row < numRows; row += ROW_PIXELS) {
+      for (var row = 0; row < numRows; row += this.rowPixels) {
         var rowOffset = row * numCols * 4;
-        for (var col = 0; col < numCols; col += COL_PIXELS) {
+        for (var col = 0; col < numCols; col += this.colPixels) {
           var offset = rowOffset + 4 * col;
           var r = sourcePixels[offset];
           var g = sourcePixels[offset + 1];
@@ -14619,45 +14627,620 @@ var WEBCAM_DETECTED = false;
         }
       }
     },
-    drawLoop: function drawLoop(video, canvas, textCanvas) {
+    drawToCanvas: function drawToCanvas(_ref) {
       var _this2 = this;
 
-      var delay = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 30;
+      var image = _ref.image,
+          canvas = _ref.canvas,
+          canvas2 = _ref.canvas2,
+          _ref$delay = _ref.delay,
+          delay = _ref$delay === undefined ? 30 : _ref$delay,
+          _ref$loop = _ref.loop,
+          loop = _ref$loop === undefined ? false : _ref$loop;
 
-      var width = window.innerWidth - 30; // for adaptive sizing
-      var height = width * 0.57;
+      var width = document.body.clientWidth; // for adaptive sizing
+      var height = window.innerHeight; // document.body.clientHeight
       canvas.width = width;
       canvas.height = height;
-      textCanvas.width = width;
-      textCanvas.height = height;
-      var textContext = textCanvas.getContext('2d');
+      canvas2.width = width;
+      canvas2.height = height;
+      var context2 = canvas2.getContext('2d');
       var context = canvas.getContext('2d');
-      textContext.drawImage(video, 0, 0, width, height);
-      context.font = ROW_PIXELS + 4 + 'px courier';
-      this.drawToContext(context, textContext.getImageData(0, 0, width, height));
-      setTimeout(function () {
-        _this2.drawLoop(video, canvas, textCanvas);
-      }, delay);
+      context2.drawImage(image, 0, 0, width, height);
+      context.font = this.rowPixels + 4 + 'px courier';
+      this.drawToContext(context, context2.getImageData(0, 0, width, height));
+      if (loop) {
+        setTimeout(function () {
+          _this2.drawToCanvas({ image: image, canvas: canvas, canvas2: canvas2, loop: loop });
+        }, delay);
+      }
+    },
+    startSlideshow: function startSlideshow(startIndex, canvas, canvas2) {
+      var _this3 = this;
+
+      this.drawToCanvas({ image: document.getElementById(this.imgIds[0]), canvas: canvas, canvas2: canvas2 });
+      var imgIndex = startIndex;
+      window.timerObj = setInterval(function () {
+        imgIndex++;
+        if (imgIndex > _this3.imgIds.length - 1) {
+          imgIndex = 0;
+        }
+        _this3.drawToCanvas({ image: document.getElementById(_this3.imgIds[imgIndex]), canvas: canvas, canvas2: canvas2 });
+      }, 5000);
+    },
+    imagesLoaded: function imagesLoaded() {
+      var canvas = document.querySelector('canvas');
+      var canvas2 = document.createElement('canvas');
+      this.startSlideshow(0, canvas, canvas2);
     }
   },
   mounted: function mounted() {
-    console.log('INIT');
-    this.initDrawing();
+    clearInterval(window.timerObj);
+    // this.initWebcam()
+    __WEBPACK_IMPORTED_MODULE_0_imagesloaded___default()(document.querySelector('.container'), this.imagesLoaded);
   }
 });
 
 /***/ }),
 /* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ * imagesLoaded v4.1.4
+ * JavaScript is all like "You images are done yet or what?"
+ * MIT License
+ */
+
+( function( window, factory ) { 'use strict';
+  // universal module definition
+
+  /*global define: false, module: false, require: false */
+
+  if ( true ) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+      __webpack_require__(22)
+    ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( EvEmitter ) {
+      return factory( window, EvEmitter );
+    }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory(
+      window,
+      require('ev-emitter')
+    );
+  } else {
+    // browser global
+    window.imagesLoaded = factory(
+      window,
+      window.EvEmitter
+    );
+  }
+
+})( typeof window !== 'undefined' ? window : this,
+
+// --------------------------  factory -------------------------- //
+
+function factory( window, EvEmitter ) {
+
+'use strict';
+
+var $ = window.jQuery;
+var console = window.console;
+
+// -------------------------- helpers -------------------------- //
+
+// extend objects
+function extend( a, b ) {
+  for ( var prop in b ) {
+    a[ prop ] = b[ prop ];
+  }
+  return a;
+}
+
+var arraySlice = Array.prototype.slice;
+
+// turn element or nodeList into an array
+function makeArray( obj ) {
+  if ( Array.isArray( obj ) ) {
+    // use object if already an array
+    return obj;
+  }
+
+  var isArrayLike = typeof obj == 'object' && typeof obj.length == 'number';
+  if ( isArrayLike ) {
+    // convert nodeList to array
+    return arraySlice.call( obj );
+  }
+
+  // array of single index
+  return [ obj ];
+}
+
+// -------------------------- imagesLoaded -------------------------- //
+
+/**
+ * @param {Array, Element, NodeList, String} elem
+ * @param {Object or Function} options - if function, use as callback
+ * @param {Function} onAlways - callback function
+ */
+function ImagesLoaded( elem, options, onAlways ) {
+  // coerce ImagesLoaded() without new, to be new ImagesLoaded()
+  if ( !( this instanceof ImagesLoaded ) ) {
+    return new ImagesLoaded( elem, options, onAlways );
+  }
+  // use elem as selector string
+  var queryElem = elem;
+  if ( typeof elem == 'string' ) {
+    queryElem = document.querySelectorAll( elem );
+  }
+  // bail if bad element
+  if ( !queryElem ) {
+    console.error( 'Bad element for imagesLoaded ' + ( queryElem || elem ) );
+    return;
+  }
+
+  this.elements = makeArray( queryElem );
+  this.options = extend( {}, this.options );
+  // shift arguments if no options set
+  if ( typeof options == 'function' ) {
+    onAlways = options;
+  } else {
+    extend( this.options, options );
+  }
+
+  if ( onAlways ) {
+    this.on( 'always', onAlways );
+  }
+
+  this.getImages();
+
+  if ( $ ) {
+    // add jQuery Deferred object
+    this.jqDeferred = new $.Deferred();
+  }
+
+  // HACK check async to allow time to bind listeners
+  setTimeout( this.check.bind( this ) );
+}
+
+ImagesLoaded.prototype = Object.create( EvEmitter.prototype );
+
+ImagesLoaded.prototype.options = {};
+
+ImagesLoaded.prototype.getImages = function() {
+  this.images = [];
+
+  // filter & find items if we have an item selector
+  this.elements.forEach( this.addElementImages, this );
+};
+
+/**
+ * @param {Node} element
+ */
+ImagesLoaded.prototype.addElementImages = function( elem ) {
+  // filter siblings
+  if ( elem.nodeName == 'IMG' ) {
+    this.addImage( elem );
+  }
+  // get background image on element
+  if ( this.options.background === true ) {
+    this.addElementBackgroundImages( elem );
+  }
+
+  // find children
+  // no non-element nodes, #143
+  var nodeType = elem.nodeType;
+  if ( !nodeType || !elementNodeTypes[ nodeType ] ) {
+    return;
+  }
+  var childImgs = elem.querySelectorAll('img');
+  // concat childElems to filterFound array
+  for ( var i=0; i < childImgs.length; i++ ) {
+    var img = childImgs[i];
+    this.addImage( img );
+  }
+
+  // get child background images
+  if ( typeof this.options.background == 'string' ) {
+    var children = elem.querySelectorAll( this.options.background );
+    for ( i=0; i < children.length; i++ ) {
+      var child = children[i];
+      this.addElementBackgroundImages( child );
+    }
+  }
+};
+
+var elementNodeTypes = {
+  1: true,
+  9: true,
+  11: true
+};
+
+ImagesLoaded.prototype.addElementBackgroundImages = function( elem ) {
+  var style = getComputedStyle( elem );
+  if ( !style ) {
+    // Firefox returns null if in a hidden iframe https://bugzil.la/548397
+    return;
+  }
+  // get url inside url("...")
+  var reURL = /url\((['"])?(.*?)\1\)/gi;
+  var matches = reURL.exec( style.backgroundImage );
+  while ( matches !== null ) {
+    var url = matches && matches[2];
+    if ( url ) {
+      this.addBackground( url, elem );
+    }
+    matches = reURL.exec( style.backgroundImage );
+  }
+};
+
+/**
+ * @param {Image} img
+ */
+ImagesLoaded.prototype.addImage = function( img ) {
+  var loadingImage = new LoadingImage( img );
+  this.images.push( loadingImage );
+};
+
+ImagesLoaded.prototype.addBackground = function( url, elem ) {
+  var background = new Background( url, elem );
+  this.images.push( background );
+};
+
+ImagesLoaded.prototype.check = function() {
+  var _this = this;
+  this.progressedCount = 0;
+  this.hasAnyBroken = false;
+  // complete if no images
+  if ( !this.images.length ) {
+    this.complete();
+    return;
+  }
+
+  function onProgress( image, elem, message ) {
+    // HACK - Chrome triggers event before object properties have changed. #83
+    setTimeout( function() {
+      _this.progress( image, elem, message );
+    });
+  }
+
+  this.images.forEach( function( loadingImage ) {
+    loadingImage.once( 'progress', onProgress );
+    loadingImage.check();
+  });
+};
+
+ImagesLoaded.prototype.progress = function( image, elem, message ) {
+  this.progressedCount++;
+  this.hasAnyBroken = this.hasAnyBroken || !image.isLoaded;
+  // progress event
+  this.emitEvent( 'progress', [ this, image, elem ] );
+  if ( this.jqDeferred && this.jqDeferred.notify ) {
+    this.jqDeferred.notify( this, image );
+  }
+  // check if completed
+  if ( this.progressedCount == this.images.length ) {
+    this.complete();
+  }
+
+  if ( this.options.debug && console ) {
+    console.log( 'progress: ' + message, image, elem );
+  }
+};
+
+ImagesLoaded.prototype.complete = function() {
+  var eventName = this.hasAnyBroken ? 'fail' : 'done';
+  this.isComplete = true;
+  this.emitEvent( eventName, [ this ] );
+  this.emitEvent( 'always', [ this ] );
+  if ( this.jqDeferred ) {
+    var jqMethod = this.hasAnyBroken ? 'reject' : 'resolve';
+    this.jqDeferred[ jqMethod ]( this );
+  }
+};
+
+// --------------------------  -------------------------- //
+
+function LoadingImage( img ) {
+  this.img = img;
+}
+
+LoadingImage.prototype = Object.create( EvEmitter.prototype );
+
+LoadingImage.prototype.check = function() {
+  // If complete is true and browser supports natural sizes,
+  // try to check for image status manually.
+  var isComplete = this.getIsImageComplete();
+  if ( isComplete ) {
+    // report based on naturalWidth
+    this.confirm( this.img.naturalWidth !== 0, 'naturalWidth' );
+    return;
+  }
+
+  // If none of the checks above matched, simulate loading on detached element.
+  this.proxyImage = new Image();
+  this.proxyImage.addEventListener( 'load', this );
+  this.proxyImage.addEventListener( 'error', this );
+  // bind to image as well for Firefox. #191
+  this.img.addEventListener( 'load', this );
+  this.img.addEventListener( 'error', this );
+  this.proxyImage.src = this.img.src;
+};
+
+LoadingImage.prototype.getIsImageComplete = function() {
+  // check for non-zero, non-undefined naturalWidth
+  // fixes Safari+InfiniteScroll+Masonry bug infinite-scroll#671
+  return this.img.complete && this.img.naturalWidth;
+};
+
+LoadingImage.prototype.confirm = function( isLoaded, message ) {
+  this.isLoaded = isLoaded;
+  this.emitEvent( 'progress', [ this, this.img, message ] );
+};
+
+// ----- events ----- //
+
+// trigger specified handler for event type
+LoadingImage.prototype.handleEvent = function( event ) {
+  var method = 'on' + event.type;
+  if ( this[ method ] ) {
+    this[ method ]( event );
+  }
+};
+
+LoadingImage.prototype.onload = function() {
+  this.confirm( true, 'onload' );
+  this.unbindEvents();
+};
+
+LoadingImage.prototype.onerror = function() {
+  this.confirm( false, 'onerror' );
+  this.unbindEvents();
+};
+
+LoadingImage.prototype.unbindEvents = function() {
+  this.proxyImage.removeEventListener( 'load', this );
+  this.proxyImage.removeEventListener( 'error', this );
+  this.img.removeEventListener( 'load', this );
+  this.img.removeEventListener( 'error', this );
+};
+
+// -------------------------- Background -------------------------- //
+
+function Background( url, element ) {
+  this.url = url;
+  this.element = element;
+  this.img = new Image();
+}
+
+// inherit LoadingImage prototype
+Background.prototype = Object.create( LoadingImage.prototype );
+
+Background.prototype.check = function() {
+  this.img.addEventListener( 'load', this );
+  this.img.addEventListener( 'error', this );
+  this.img.src = this.url;
+  // check if image is already complete
+  var isComplete = this.getIsImageComplete();
+  if ( isComplete ) {
+    this.confirm( this.img.naturalWidth !== 0, 'naturalWidth' );
+    this.unbindEvents();
+  }
+};
+
+Background.prototype.unbindEvents = function() {
+  this.img.removeEventListener( 'load', this );
+  this.img.removeEventListener( 'error', this );
+};
+
+Background.prototype.confirm = function( isLoaded, message ) {
+  this.isLoaded = isLoaded;
+  this.emitEvent( 'progress', [ this, this.element, message ] );
+};
+
+// -------------------------- jQuery -------------------------- //
+
+ImagesLoaded.makeJQueryPlugin = function( jQuery ) {
+  jQuery = jQuery || window.jQuery;
+  if ( !jQuery ) {
+    return;
+  }
+  // set local variable
+  $ = jQuery;
+  // $().imagesLoaded()
+  $.fn.imagesLoaded = function( options, callback ) {
+    var instance = new ImagesLoaded( this, options, callback );
+    return instance.jqDeferred.promise( $(this) );
+  };
+};
+// try making plugin
+ImagesLoaded.makeJQueryPlugin();
+
+// --------------------------  -------------------------- //
+
+return ImagesLoaded;
+
+});
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * EvEmitter v1.1.0
+ * Lil' event emitter
+ * MIT License
+ */
+
+/* jshint unused: true, undef: true, strict: true */
+
+( function( global, factory ) {
+  // universal module definition
+  /* jshint strict: false */ /* globals define, module, window */
+  if ( true ) {
+    // AMD - RequireJS
+    !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+				__WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS - Browserify, Webpack
+    module.exports = factory();
+  } else {
+    // Browser globals
+    global.EvEmitter = factory();
+  }
+
+}( typeof window != 'undefined' ? window : this, function() {
+
+"use strict";
+
+function EvEmitter() {}
+
+var proto = EvEmitter.prototype;
+
+proto.on = function( eventName, listener ) {
+  if ( !eventName || !listener ) {
+    return;
+  }
+  // set events hash
+  var events = this._events = this._events || {};
+  // set listeners array
+  var listeners = events[ eventName ] = events[ eventName ] || [];
+  // only add once
+  if ( listeners.indexOf( listener ) == -1 ) {
+    listeners.push( listener );
+  }
+
+  return this;
+};
+
+proto.once = function( eventName, listener ) {
+  if ( !eventName || !listener ) {
+    return;
+  }
+  // add event
+  this.on( eventName, listener );
+  // set once flag
+  // set onceEvents hash
+  var onceEvents = this._onceEvents = this._onceEvents || {};
+  // set onceListeners object
+  var onceListeners = onceEvents[ eventName ] = onceEvents[ eventName ] || {};
+  // set flag
+  onceListeners[ listener ] = true;
+
+  return this;
+};
+
+proto.off = function( eventName, listener ) {
+  var listeners = this._events && this._events[ eventName ];
+  if ( !listeners || !listeners.length ) {
+    return;
+  }
+  var index = listeners.indexOf( listener );
+  if ( index != -1 ) {
+    listeners.splice( index, 1 );
+  }
+
+  return this;
+};
+
+proto.emitEvent = function( eventName, args ) {
+  var listeners = this._events && this._events[ eventName ];
+  if ( !listeners || !listeners.length ) {
+    return;
+  }
+  // copy over to avoid interference if .off() in listener
+  listeners = listeners.slice(0);
+  args = args || [];
+  // once stuff
+  var onceListeners = this._onceEvents && this._onceEvents[ eventName ];
+
+  for ( var i=0; i < listeners.length; i++ ) {
+    var listener = listeners[i]
+    var isOnce = onceListeners && onceListeners[ listener ];
+    if ( isOnce ) {
+      // remove listener
+      // remove before trigger to prevent recursion
+      this.off( eventName, listener );
+      // unset once flag
+      delete onceListeners[ listener ];
+    }
+    // trigger listener
+    listener.apply( this, args );
+  }
+
+  return this;
+};
+
+proto.allOff = function() {
+  delete this._events;
+  delete this._onceEvents;
+};
+
+return EvEmitter;
+
+}));
+
+
+/***/ }),
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('video',{attrs:{"id":"video","autoplay":""}}),_vm._v(" "),_c('div',{staticClass:"container"},[_c('h2',[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('span',{staticClass:"controls"}),_vm._v(" "),_vm._m(0,false,false),_vm._v(" "),_c('canvas')])])}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('figure',[_c('a',{attrs:{"href":"https://quarryhillpto.com/sciencefair/"}},[_vm._v("Quarry Hill STEM FAIR")]),_vm._v(" Demo\n     "),_c('div',{},[_vm._v("\n       Drawing images with the Alphabet\n     ")])])}]
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"container"},[_c('button',{staticClass:"cam-btn",on:{"click":_vm.initWebcam}},[_c('svg',{staticClass:"octicon octicon-device-camera-video",attrs:{"viewBox":"0 0 16 16","version":"1.1","width":"16","height":"16","aria-hidden":"true"}},[_c('path',{attrs:{"fill-rule":"evenodd","d":"M15.2 2.09L10 5.72V3c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h8c.55 0 1-.45 1-1V9.28l5.2 3.63c.33.23.8 0 .8-.41v-10c0-.41-.47-.64-.8-.41z"}})])]),_vm._v(" "),_c('div',{staticClass:"panel"},[_c('div',{staticClass:"title"},[_vm._v(_vm._s(_vm.title)+" ")]),_vm._v(" "),_vm._m(0,false,false)]),_vm._v(" "),_vm._m(1,false,false)])])}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('h5',[_c('a',{attrs:{"href":"https://quarryhillpto.com/sciencefair/"}},[_vm._v("Quarry Hill STEM FAIR")]),_vm._v(" Demo: Drawing images with the Alphabet\n     ")])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"art-pics",staticStyle:{"display":"none"}},[_c('img',{attrs:{"id":"img0","src":__webpack_require__(24),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img1","src":__webpack_require__(25),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img2","src":__webpack_require__(26),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img3","src":__webpack_require__(27),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img4","src":__webpack_require__(28),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img5","src":__webpack_require__(29),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img6","src":__webpack_require__(30),"width":"20","height":"12"}})])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
-/* 22 */
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "monalisa.jpg?2827e3d9c5ce50fbcf035827b35a0a60";
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "sunflowers.jpg?46102fd89317385949cb3ea32331e71e";
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "CreationOfAdam.jpg?16006667d09cb6b32210b9e6204e4217";
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "Starry_Night.jpg?eda3ad9aaf682c1692f2cb8ad00fd2ce";
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "The_Persistence_of_Memory.jpg?a6bb2528b0a48adc8ae648426306c043";
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "Last_Supper.jpg?842745468a5cda0600ce1173185eacc3";
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "gothic.jpg?89dbb3bfe9b421304880c68beedef381";
+
+/***/ }),
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

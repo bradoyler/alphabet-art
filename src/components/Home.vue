@@ -1,21 +1,31 @@
 <template lang="html">
   <div>
-    <video id="video" autoplay></video>
     <div class="container">
-      <h2>{{title}}</h2>
-      <span class="controls"></span>
-      <figure>
-       <a href="https://quarryhillpto.com/sciencefair/">Quarry Hill STEM FAIR</a> Demo
-       <div class="">
-         Drawing images with the Alphabet
-       </div>
-      </figure>
-      <canvas></canvas>
+      <button class="cam-btn" v-on:click="initWebcam">
+        <svg class="octicon octicon-device-camera-video" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15.2 2.09L10 5.72V3c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h8c.55 0 1-.45 1-1V9.28l5.2 3.63c.33.23.8 0 .8-.41v-10c0-.41-.47-.64-.8-.41z"/></svg>
+      </button>
+      <div class="panel">
+        <div class="title">{{title}} </div>
+        <h5>
+
+         <a href="https://quarryhillpto.com/sciencefair/">Quarry Hill STEM FAIR</a> Demo: Drawing images with the Alphabet
+       </h5>
+      </div>
+     <div style="display:none" class="art-pics">
+       <img id="img0" src="../assets/monalisa.jpg" width="20" height="12">
+       <img id="img1" src="../assets/sunflowers.jpg" width="20" height="12">
+       <img id="img2" src="../assets/CreationOfAdam.jpg" width="20" height="12">
+       <img id="img3" src="../assets/Starry_Night.jpg" width="20" height="12">
+       <img id="img4" src="../assets/The_Persistence_of_Memory.jpg" width="20" height="12">
+       <img id="img5" src="../assets/Last_Supper.jpg" width="20" height="12">
+       <img id="img6" src="../assets/gothic.jpg" width="20" height="12">
+     </div>
     </div>
   </div>
 </template>
 
 <script>
+import imagesLoaded from 'imagesloaded'
 // for converting stream to video.src
 window.URL = window.URL || window.webkitURL
 
@@ -23,30 +33,29 @@ window.URL = window.URL || window.webkitURL
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
     navigator.mozGetUserMedia || navigator.msGetUserMedia
 
-const ROW_PIXELS = 10
-const COL_PIXELS = 8
-let WEBCAM_DETECTED = false
-
 export default {
   data () {
     return {
       captureSpeed: 2000,
+      rowPixels: 10,
+      colPixels: 8,
+      imgIds: ['img0', 'img1', 'img2', 'img3', 'img4', 'img5', 'img6'],
       webcamDetected: false,
       paused: false,
       title: 'Alphabet Art'
     }
   },
   methods: {
-    initDrawing () {
+    initWebcam () {
+      clearInterval(window.timerObj)
       const video = document.querySelector('#video')
       const canvas = document.querySelector('canvas')
-      const textCanvas = document.createElement('canvas')
+      const canvas2 = document.createElement('canvas')
       navigator.getUserMedia({video: true}, stream => {
         video.src = window.URL.createObjectURL(stream)
-        if (!WEBCAM_DETECTED) {
-          console.log('initWebcam >>>>')
-          WEBCAM_DETECTED = true
-          setTimeout(() => { this.drawLoop(video, canvas, textCanvas) }, 2000)
+        if (!this.webcamDetected) {
+          this.webcamDetected = true
+          setTimeout(() => this.drawToCanvas({ image: video, canvas, canvas2, loop: true }), 1000)
         }
       }, e => console.log(`Failed to capture video ${e}`))
     },
@@ -55,18 +64,18 @@ export default {
       // const DARK_TO_LIGHT = "@$BW#MQ8ERN95D06&HgGOS3%UPKFIp2ZbAdq4wCha[]1{}JXekVliofunjLTz7Yst=?)(|+xcmvr^/_*!y;,-':`.".split('')
 
       // Alpha chars, "Letters"
-      const DARK_TO_LIGHT = 'BWMQERNDHgGOSUPJXekVliofunjLTzYstxcmvry'.split('')
-      const NORMALISER = DARK_TO_LIGHT.length / 256
-      const index = Math.floor(luminance * NORMALISER)
-      return DARK_TO_LIGHT[index]
+      const darkToLight = 'BWMQERNDHgGOSUPJXekVliofunjLTzYstxcmvry'.split('')
+      const normalizer = darkToLight.length / 256
+      const index = Math.floor(luminance * normalizer)
+      return darkToLight[index]
     },
     drawToContext (context, sourceImageData) {
       const sourcePixels = sourceImageData.data
       const numCols = sourceImageData.width
       const numRows = sourceImageData.height
-      for (let row = 0; row < numRows; row += ROW_PIXELS) {
+      for (let row = 0; row < numRows; row += this.rowPixels) {
         const rowOffset = row * numCols * 4
-        for (let col = 0; col < numCols; col += COL_PIXELS) {
+        for (let col = 0; col < numCols; col += this.colPixels) {
           const offset = rowOffset + 4 * col
           const r = sourcePixels[offset]
           const g = sourcePixels[offset + 1]
@@ -78,24 +87,41 @@ export default {
         }
       }
     },
-    drawLoop (video, canvas, textCanvas, delay = 30) {
-      const width = window.innerWidth - 30 // for adaptive sizing
-      const height = width * 0.57
+    drawToCanvas ({ image, canvas, canvas2, delay = 30, loop = false }) {
+      const width = document.body.clientWidth // for adaptive sizing
+      const height = window.innerHeight // document.body.clientHeight
       canvas.width = width
       canvas.height = height
-      textCanvas.width = width
-      textCanvas.height = height
-      const textContext = textCanvas.getContext('2d')
+      canvas2.width = width
+      canvas2.height = height
+      const context2 = canvas2.getContext('2d')
       const context = canvas.getContext('2d')
-      textContext.drawImage(video, 0, 0, width, height)
-      context.font = `${(ROW_PIXELS + 4)}px courier`
-      this.drawToContext(context, textContext.getImageData(0, 0, width, height))
-      setTimeout(() => { this.drawLoop(video, canvas, textCanvas) }, delay)
+      context2.drawImage(image, 0, 0, width, height)
+      context.font = `${(this.rowPixels + 4)}px courier`
+      this.drawToContext(context, context2.getImageData(0, 0, width, height))
+      if (loop) {
+        setTimeout(() => { this.drawToCanvas({ image, canvas, canvas2, loop }) }, delay)
+      }
+    },
+    startSlideshow (startIndex, canvas, canvas2) {
+      this.drawToCanvas({ image: document.getElementById(this.imgIds[0]), canvas, canvas2 })
+      let imgIndex = startIndex
+      window.timerObj = setInterval(() => {
+        imgIndex++
+        if (imgIndex > (this.imgIds.length - 1)) { imgIndex = 0 }
+        this.drawToCanvas({ image: document.getElementById(this.imgIds[imgIndex]), canvas, canvas2 })
+      }, 5000)
+    },
+    imagesLoaded () {
+      const canvas = document.querySelector('canvas')
+      const canvas2 = document.createElement('canvas')
+      this.startSlideshow(0, canvas, canvas2)
     }
   },
   mounted () {
-    console.log('INIT')
-    this.initDrawing()
+    clearInterval(window.timerObj)
+    // this.initWebcam()
+    imagesLoaded(document.querySelector('.container'), this.imagesLoaded)
   }
 }
 </script>
@@ -104,17 +130,30 @@ export default {
 .controls {
   font-size:.25em;
 }
-  #video {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    max-width: 100px;
-  }
-  .panel-body {
-    font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
-    font-size: 12px;
-    text-align: left;
-    color: #2bf22b;
-    background-color: #000;
-  }
+.cam-btn {
+  padding-top: 4px;
+  font-size: .8em;
+  float: left;
+}
+.title {
+  font-size: 1.5em;
+}
+.panel {
+  margin: auto;
+  max-width: 440px;
+  background: #eee;
+}
+#video {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  max-width: 100px;
+}
+.panel-body {
+  font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+  font-size: 12px;
+  text-align: left;
+  color: #2bf22b;
+  background-color: #000;
+}
 </style>
