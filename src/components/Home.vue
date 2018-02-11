@@ -46,8 +46,8 @@ export default {
   },
   methods: {
     initWebcam () {
-      console.log('initWebcam()')
-      clearInterval(window.timerObj)
+      console.log('initWebcam()!!')
+      clearInterval(window.slideshowTimer)
       const video = document.querySelector('#video')
       const canvas = document.querySelector('canvas')
       const canvas2 = document.createElement('canvas')
@@ -87,7 +87,7 @@ export default {
         }
       }
     },
-    drawToCanvas ({ image, canvas, canvas2, delay = 30, loop = false }) {
+    drawToCanvas ({ image, canvas, canvas2, loop = false }) {
       const width = document.body.clientWidth // for adaptive sizing
       const height = window.innerHeight // document.body.clientHeight
       canvas.width = width
@@ -100,13 +100,14 @@ export default {
       context.font = `${(this.rowPixels + 4)}px courier`
       this.drawToContext(context, context2.getImageData(0, 0, width, height))
       if (loop) {
-        setTimeout(() => { this.drawToCanvas({ image, canvas, canvas2, loop }) }, delay)
+        requestAnimationFrame(() => this.drawToCanvas({ image, canvas, canvas2, loop }))
       }
     },
     startSlideshow (startIndex, canvas, canvas2) {
       this.drawToCanvas({ image: document.getElementById(this.imgIds[0]), canvas, canvas2 })
+
       let imgIndex = startIndex
-      window.timerObj = setInterval(() => {
+      window.slideshowTimer = setInterval(() => {
         imgIndex++
         if (imgIndex > (this.imgIds.length - 1)) { imgIndex = 0 }
         this.drawToCanvas({ image: document.getElementById(this.imgIds[imgIndex]), canvas, canvas2 })
@@ -119,8 +120,7 @@ export default {
     }
   },
   mounted () {
-    clearInterval(window.timerObj)
-    // this.initWebcam()
+    clearInterval(window.slideshowTimer)
     imagesLoaded(document.querySelector('.container'), this.imagesLoaded)
   }
 }
