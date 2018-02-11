@@ -1,6 +1,6 @@
 {
-  "name": "ascii-art-cam",
-  "description": "converting a webcam stream to ASCII art",
+  "name": "alphabet-art",
+  "description": "a vue.js app for drawing pictures with characters",
   "version": "0.0.1",
   "author": "Brad Oyler <bradoyler@gmail.com>",
   "license": "MIT",
