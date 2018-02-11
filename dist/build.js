@@ -14469,7 +14469,7 @@ if (inBrowser && window.Vue) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_21a79714_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0038404f_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(23);
 function injectStyle (ssrContext) {
   __webpack_require__(18)
 }
@@ -14488,7 +14488,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_21a79714_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0038404f_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -14509,7 +14509,7 @@ var content = __webpack_require__(19);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("8b5b521a", content, true);
+var update = __webpack_require__(3)("24111860", content, true);
 
 /***/ }),
 /* 19 */
@@ -14520,7 +14520,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, ".controls{font-size:.25em}.cam-btn{padding-top:4px;font-size:.8em;float:left}.title{font-size:1.5em}.panel{margin:auto;max-width:440px;background:#eee}#video{position:absolute;top:3px;left:3px;max-width:100px}.panel-body{font-family:Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;font-size:12px;text-align:left;color:#2bf22b;background-color:#000}", ""]);
+exports.push([module.i, ".controls{font-size:.25em}.cam-btn{padding:6px 10px 1px;font-size:.5em;float:left}.title{font-size:1.5em}.panel{margin:auto;max-width:440px;background:#eee}#video{position:absolute;top:3px;left:3px;max-width:100px}.panel-body{font-family:Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;font-size:12px;text-align:left;color:#2bf22b;background-color:#000}", ""]);
 
 // exports
 
@@ -14532,7 +14532,6 @@ exports.push([module.i, ".controls{font-size:.25em}.cam-btn{padding-top:4px;font
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_imagesloaded__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_imagesloaded___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_imagesloaded__);
-//
 //
 //
 //
@@ -14583,7 +14582,8 @@ navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia 
     initWebcam: function initWebcam() {
       var _this = this;
 
-      clearInterval(window.timerObj);
+      console.log('initWebcam()!!');
+      clearInterval(window.slideshowTimer);
       var video = document.querySelector('#video');
       var canvas = document.querySelector('canvas');
       var canvas2 = document.createElement('canvas');
@@ -14633,8 +14633,6 @@ navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia 
       var image = _ref.image,
           canvas = _ref.canvas,
           canvas2 = _ref.canvas2,
-          _ref$delay = _ref.delay,
-          delay = _ref$delay === undefined ? 30 : _ref$delay,
           _ref$loop = _ref.loop,
           loop = _ref$loop === undefined ? false : _ref$loop;
 
@@ -14650,17 +14648,18 @@ navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia 
       context.font = this.rowPixels + 4 + 'px courier';
       this.drawToContext(context, context2.getImageData(0, 0, width, height));
       if (loop) {
-        setTimeout(function () {
-          _this2.drawToCanvas({ image: image, canvas: canvas, canvas2: canvas2, loop: loop });
-        }, delay);
+        requestAnimationFrame(function () {
+          return _this2.drawToCanvas({ image: image, canvas: canvas, canvas2: canvas2, loop: loop });
+        });
       }
     },
     startSlideshow: function startSlideshow(startIndex, canvas, canvas2) {
       var _this3 = this;
 
       this.drawToCanvas({ image: document.getElementById(this.imgIds[0]), canvas: canvas, canvas2: canvas2 });
+
       var imgIndex = startIndex;
-      window.timerObj = setInterval(function () {
+      window.slideshowTimer = setInterval(function () {
         imgIndex++;
         if (imgIndex > _this3.imgIds.length - 1) {
           imgIndex = 0;
@@ -14675,8 +14674,7 @@ navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia 
     }
   },
   mounted: function mounted() {
-    clearInterval(window.timerObj);
-    // this.initWebcam()
+    clearInterval(window.slideshowTimer);
     __WEBPACK_IMPORTED_MODULE_0_imagesloaded___default()(document.querySelector('.container'), this.imagesLoaded);
   }
 });
@@ -15192,7 +15190,7 @@ return EvEmitter;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"container"},[_c('button',{staticClass:"cam-btn",on:{"click":_vm.initWebcam}},[_c('svg',{staticClass:"octicon octicon-device-camera-video",attrs:{"viewBox":"0 0 16 16","version":"1.1","width":"16","height":"16","aria-hidden":"true"}},[_c('path',{attrs:{"fill-rule":"evenodd","d":"M15.2 2.09L10 5.72V3c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h8c.55 0 1-.45 1-1V9.28l5.2 3.63c.33.23.8 0 .8-.41v-10c0-.41-.47-.64-.8-.41z"}})])]),_vm._v(" "),_c('div',{staticClass:"panel"},[_c('div',{staticClass:"title"},[_vm._v(_vm._s(_vm.title)+" ")]),_vm._v(" "),_vm._m(0,false,false)]),_vm._v(" "),_vm._m(1,false,false)])])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('button',{staticClass:"cam-btn btn btn-secondary",on:{"click":_vm.initWebcam}},[_c('svg',{staticClass:"octicon octicon-device-camera-video",attrs:{"viewBox":"0 0 16 16","version":"1.1","width":"16","height":"16","aria-hidden":"true"}},[_c('path',{attrs:{"fill-rule":"evenodd","d":"M15.2 2.09L10 5.72V3c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h8c.55 0 1-.45 1-1V9.28l5.2 3.63c.33.23.8 0 .8-.41v-10c0-.41-.47-.64-.8-.41z"}})])]),_vm._v(" "),_c('div',{staticClass:"container"},[_c('div',{staticClass:"panel"},[_c('div',{staticClass:"title"},[_vm._v(_vm._s(_vm.title)+" ")]),_vm._v(" "),_vm._m(0,false,false)]),_vm._v(" "),_vm._m(1,false,false)])])}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('h5',[_c('a',{attrs:{"href":"https://quarryhillpto.com/sciencefair/"}},[_vm._v("Quarry Hill STEM FAIR")]),_vm._v(" Demo: Drawing images with the Alphabet\n     ")])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"art-pics",staticStyle:{"display":"none"}},[_c('img',{attrs:{"id":"img0","src":__webpack_require__(24),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img1","src":__webpack_require__(25),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img2","src":__webpack_require__(26),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img3","src":__webpack_require__(27),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img4","src":__webpack_require__(28),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img5","src":__webpack_require__(29),"width":"20","height":"12"}}),_vm._v(" "),_c('img',{attrs:{"id":"img6","src":__webpack_require__(30),"width":"20","height":"12"}})])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
